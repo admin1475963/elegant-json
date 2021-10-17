@@ -24,6 +24,7 @@
 
 package io.github.admin1475963.elegantjson;
 
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -66,10 +67,12 @@ public class JsonArray implements ConstructiveJsonArray {
     }
 
     @Override
-    synchronized public final ConstructiveJsonArray add(
+    public final ConstructiveJsonArray add(
         final JsonRepresentable object
     ) {
-        this.elements.add(object);
+        synchronized (this.elements) {
+            this.elements.add(object);
+        }
         return this;
     }
 }
