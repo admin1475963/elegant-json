@@ -68,48 +68,10 @@ This code give us:
     "Second element"
 ]
 ```
-
 ## Making your object convertible to JSON
 
 For this purpose you only implement `JsonRepresentable`.
 
-## More complicated scenary of use
-
-If you need that your class should return instance of `ConstructiveJsonObject`
-(JsonObject simple implementation of this interface), you can implement
-`JsonObjectConvertible`.
-
-For example:
-```java
-public final class MyClass implements JsonObjectConvertible {
-    private final String field1;
-    private final String field2;
-    
-    // constructor and other methods
-    
-    @Override
-    public ConstructiveJsonObject json() {
-        return new JsonObject
-            .add("field1", new JsonString(this.field1))
-            .add("field2", new JsonString(this.field2));
-    }
-}
-```
-
-Now another object can add new elements to this JSON:
-```java
-final ConstructiveJsonObject json = new MyClass("field1", "field2").json();
-json.add("field3", new JsonString("field3")).toJson();
-```
-
-This code gives:
-```json
-{
-    "field1": "field1",
-    "field2": "field2",
-    "field3": "field3"
-}
-```
 
 ## How to contribute
 
