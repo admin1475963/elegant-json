@@ -76,7 +76,7 @@ For this purpose you only implement `JsonRepresentable`.
 ## How to contribute
 
 If you have improvement suggestions or you find bugs, please make [issue](https://github.com/admin1475963/elegant-json/issues).
-If you want make changes, please fork this repository, make changes and make pull request [issue](https://github.com/admin1475963/elegant-json/pulls).
+If you want make changes, please fork this repository, make changes and make [pull request](https://github.com/admin1475963/elegant-json/pulls).
 After making changes verify it by:
 ```
 mvn clean verify -Pquality
