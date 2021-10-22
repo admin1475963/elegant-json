@@ -8,6 +8,9 @@
 Read this blog [post](https://www.yegor256.com/2016/04/05/printers-instead-of-getters.html)
 to understand main idea.
 
+**ATTENTION** This library is in alpha version, and the API may change.
+Please use it at your own risk.
+
 ## How to use it
 
 Maven:
@@ -29,7 +32,7 @@ new JsonObject()
     .add("Integer field", new JsonInt(5))
     .add("String field", new JsonString("Simple text"))
     .add(
-        "Object field", 
+        "Object field",
         new JsonObject()
             .add("Inner field", new JsonString("Inner element"))
     )
@@ -47,7 +50,7 @@ This code give us:
 }
 ```
 
-We use classes like `JsonString`, because the method `add()` accept 
+We use classes like `JsonString`, because the method `add()` accept
 as a second paramater only instances of `JsonRepresentable`.
 This classes are wrappers for primitives.
 
